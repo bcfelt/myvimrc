@@ -1,6 +1,10 @@
 " Don't try to be vi compatible
 set nocompatible
 
+" Set <Leader>
+let mapleader=" "
+
+
 " Helps force plugins to load correctly when it is turned back on below
 filetype off
 
@@ -77,7 +81,7 @@ set incsearch
 set ignorecase
 set smartcase
 set showmatch
-map <leader><space> :let @/=''<cr> " clear search
+" map <leader><space> :let @/=''<cr> " clear search
 
 " Remap help key.
 inoremap <F1> <ESC>:set invfullscreen<CR>a
@@ -89,6 +93,8 @@ map <C-D> i<cfdump var=><ESC>i
 imap <C-D> <ESC>i<cfdump var=><ESC>i
 map <C-F> iwritedump();<ESC>hi
 imap <C-F> <ESC>iwritedump();<ESC>hi
+map <leader>h :bp<cr>
+map <leader>l :bn<cr>
 
 " Textmate holdouts
 
@@ -100,7 +106,7 @@ set listchars=tab:?\ ,eol:?
 " Uncomment this to enable by default:
 " set list " To enable by default
 " Or use your leader key + l to toggle on/off
-map <leader>l :set list!<CR> " Toggle tabs and EOL
+" map <leader>l :set list!<CR> " Toggle tabs and EOL
 
 " Color scheme (terminal)
 set t_Co=256
@@ -111,9 +117,6 @@ colorscheme spring-night
 au BufReadPost *.cfm set syntax=cfml
 au BufReadPost *.cfml set syntax=cfml
 au BufReadPost *.cfc set syntax=cfscript
-
-" Set <Leader>
-let mapleader=" "
 
 " Map for upload
 nnoremap <Leader>up :echom expand('%')
